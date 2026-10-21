@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficos de Ventas - Yenys</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-top">
+      <a href="dashboard-empleado.html" class="logo">Yenys Admin</a>
+      
+      <div style="flex: 1; display: flex; justify-content: center;">
+        <h3 style="color: white; font-size: 18px; margin: 0;">Reportes y Estadísticas</h3>
+      </div>
+      
+      <div class="header-actions">
+        <div class="user-avatar" onclick="logout()" style="cursor: pointer; display: flex; align-items: center; justify-content: center; background: var(--cta-orange-600); font-weight: 700;" title="Cerrar sesión">A</div>
+      </div>
+    </div>
+    
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li><a href="dashboard-empleado.html">Dashboard</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="graficos.html" class="active">Gráficos</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Contenido Principal -->
+  <main style="padding: var(--space-12) 0;">
+    <div class="container">
+      
+      <div style="margin-bottom: var(--space-12);">
+        <h1 style="font-size: 48px; margin-bottom: var(--space-2);">Reportes de Ventas</h1>
+        <p style="color: var(--neutral-600); font-size: 18px;">Análisis detallado del rendimiento del negocio</p>
+      </div>
+      
+      <!-- Métricas Clave -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 style="font-size: 32px; margin-bottom: var(--space-6);">Métricas Globales</h2>
+        <div id="key-metrics" class="grid-4"></div>
+      </section>
+      
+      <!-- Gráfico de Ventas por Mes -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 style="font-size: 32px; margin-bottom: var(--space-6);">Ventas Mensuales</h2>
+        <div class="card" style="padding: var(--space-8);">
+          <canvas id="sales-chart" style="height: 400px;"></canvas>
+        </div>
+      </section>
+      
+      <!-- Grid de 2 columnas -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-bottom: var(--space-12);">
+        
+        <!-- Productos Más Vendidos -->
+        <section>
+          <h2 style="font-size: 32px; margin-bottom: var(--space-6);">Top Productos</h2>
+          <div class="card" style="padding: var(--space-8);">
+            <canvas id="top-products-chart" style="height: 300px;"></canvas>
+          </div>
+        </section>
+        
+        <!-- Tendencias -->
+        <section>
+          <h2 style="font-size: 32px; margin-bottom: var(--space-6);">Tendencia de Ventas</h2>
+          <div class="card" style="padding: var(--space-8);">
+            <canvas id="trend-chart" style="height: 300px;"></canvas>
+          </div>
+        </section>
+        
+      </div>
+      
+      <!-- Tabla de Transacciones -->
+      <section>
+        <h2 style="font-size: 32px; margin-bottom: var(--space-6);">Últimas Transacciones</h2>
+        <div id="transactions-table"></div>
+      </section>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Yenys Admin</h4>
+          <p style="color: rgba(255,255,255,0.7);">Panel de administración</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="dashboard-empleado.html">Dashboard</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Yenys. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = checkAuth('empleado');
+      if (user) {
+        document.querySelector('.user-avatar').textContent = user.name.charAt(0).toUpperCase();
+      }
+    });
+  </script>
+  
+  <style>
+    @media (max-width: 768px) {
+      main > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Empleado - Yenys</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-top">
+      <a href="dashboard-empleado.html" class="logo">Yenys Admin</a>
+      
+      <div style="flex: 1; display: flex; justify-content: center;">
+        <h3 style="color: white; font-size: 18px; margin: 0;">Panel de Administración</h3>
+      </div>
+      
+      <div class="header-actions">
+        <div class="user-avatar" onclick="logout()" style="cursor: pointer; display: flex; align-items: center; justify-content: center; background: var(--cta-orange-600); font-weight: 700;" title="Cerrar sesión">A</div>
+      </div>
+    </div>
+    
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li><a href="dashboard-empleado.html" class="active">Dashboard</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="graficos.html">Gráficos</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Contenido Principal -->
+  <main style="padding: var(--space-12) 0;">
+    <div class="container">
+      
+      <!-- Título -->
+      <div style="margin-bottom: var(--space-8);">
+        <h1 style="font-size: 48px; margin-bottom: var(--space-2);">Dashboard Administrativo</h1>
+        <p style="color: var(--neutral-600); font-size: 18px;">Resumen de ventas y estadísticas</p>
+      </div>
+      
+      <!-- Métricas Clave -->
+      <section style="margin-bottom: var(--space-12);">
+        <div class="grid-4">
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+              <div style="width: 48px; height: 48px; background: var(--primary-50); color: var(--primary-600); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">💰</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--success-green);">↑ +12.5%</div>
+            </div>
+            <div style="font-size: 14px; font-weight: 500; color: var(--neutral-600); margin-bottom: var(--space-2);">Ventas Hoy</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--neutral-900);">S/ 1,245</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+              <div style="width: 48px; height: 48px; background: #FFF7ED; color: var(--cta-orange-600); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">📦</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--success-green);">↑ +8.3%</div>
+            </div>
+            <div style="font-size: 14px; font-weight: 500; color: var(--neutral-600); margin-bottom: var(--space-2);">Pedidos Pendientes</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--neutral-900);">12</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+              <div style="width: 48px; height: 48px; background: #FEF2F2; color: var(--error-red); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">⚠️</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--error-red);">↓ Alerta</div>
+            </div>
+            <div style="font-size: 14px; font-weight: 500; color: var(--neutral-600); margin-bottom: var(--space-2);">Stock Bajo</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--neutral-900);">5</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+              <div style="width: 48px; height: 48px; background: #ECFDF5; color: var(--success-green); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">👥</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--success-green);">↑ +15.2%</div>
+            </div>
+            <div style="font-size: 14px; font-weight: 500; color: var(--neutral-600); margin-bottom: var(--space-2);">Clientes Activos</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--neutral-900);">248</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Acciones Rápidas -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 style="font-size: 36px; margin-bottom: var(--space-6);">Acciones Rápidas</h2>
+        
+        <div class="grid-3">
+          <a href="productos.html" class="card" style="text-decoration: none; padding: var(--space-6); display: flex; align-items: center; gap: var(--space-4); cursor: pointer;">
+            <div style="width: 56px; height: 56px; background: var(--gradient-button); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">➕</div>
+            <div>
+              <h4 style="color: var(--neutral-900); margin-bottom: 4px;">Agregar Producto</h4>
+              <p style="color: var(--neutral-600); font-size: 14px; margin: 0;">Nuevo item al catálogo</p>
+            </div>
+          </a>
+          
+          <a href="graficos.html" class="card" style="text-decoration: none; padding: var(--space-6); display: flex; align-items: center; gap: var(--space-4); cursor: pointer;">
+            <div style="width: 56px; height: 56px; background: var(--gradient-accent); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">📊</div>
+            <div>
+              <h4 style="color: var(--neutral-900); margin-bottom: 4px;">Ver Reportes</h4>
+              <p style="color: var(--neutral-600); font-size: 14px; margin: 0;">Estadísticas de ventas</p>
+            </div>
+          </a>
+          
+          <a href="productos.html" class="card" style="text-decoration: none; padding: var(--space-6); display: flex; align-items: center; gap: var(--space-4); cursor: pointer;">
+            <div style="width: 56px; height: 56px; background: var(--gradient-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">📋</div>
+            <div>
+              <h4 style="color: var(--neutral-900); margin-bottom: 4px;">Gestionar Inventario</h4>
+              <p style="color: var(--neutral-600); font-size: 14px; margin: 0;">Control de stock</p>
+            </div>
+          </a>
+        </div>
+      </section>
+      
+      <!-- Top Productos -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 style="font-size: 36px; margin-bottom: var(--space-6);">Productos Más Vendidos</h2>
+        <div id="top-products"></div>
+      </section>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Yenys Admin</h4>
+          <p style="color: rgba(255,255,255,0.7);">Panel de administración</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="graficos.html">Gráficos</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Yenys. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = checkAuth('empleado');
+      if (user) {
+        document.querySelector('.user-avatar').textContent = user.name.charAt(0).toUpperCase();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas de Temporada - Yenys</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-top">
+      <a href="dashboard-cliente.html" class="logo">Yenys</a>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar productos...">
+      </div>
+      
+      <div class="header-actions">
+        <a href="carrito.html" class="cart-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        
+        <div class="user-avatar" onclick="logout()" style="cursor: pointer; display: flex; align-items: center; justify-content: center; background: var(--primary-500); font-weight: 700;" title="Cerrar sesión">U</div>
+      </div>
+    </div>
+    
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li><a href="dashboard-cliente.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html" class="active">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Contenido Principal -->
+  <main>
+    
+    <!-- Hero de Oferta con Countdown -->
+    <section style="background: var(--gradient-hero); background-size: 200% 100%; animation: gradient-slide 6s ease-in-out infinite; padding: var(--space-24) var(--space-8); text-align: center; color: var(--neutral-white); position: relative; overflow: hidden;">
+      <div class="container" style="position: relative; z-index: 1;">
+        <div style="display: inline-block; background: rgba(255,23,68,0.2); padding: var(--space-2) var(--space-6); border-radius: var(--radius-full); margin-bottom: var(--space-6); font-weight: 600; border: 2px solid rgba(255,255,255,0.3);">
+          Oferta Especial de Temporada
+        </div>
+        
+        <h1 style="font-size: 96px; font-weight: 700; margin-bottom: var(--space-6); text-shadow: 0 4px 12px rgba(0,0,0,0.2);">30% OFF</h1>
+        
+        <p style="font-size: 24px; margin-bottom: var(--space-12); opacity: 0.95;">En productos seleccionados de nuestra colección</p>
+        
+        <!-- Countdown Timer -->
+        <div style="display: flex; gap: var(--space-6); justify-content: center; margin-bottom: var(--space-8);">
+          <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: var(--space-6); border-radius: var(--radius-lg); min-width: 100px;">
+            <div style="font-size: 48px; font-weight: 700;">05</div>
+            <div style="font-size: 14px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px;">Días</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: var(--space-6); border-radius: var(--radius-lg); min-width: 100px;">
+            <div style="font-size: 48px; font-weight: 700;">14</div>
+            <div style="font-size: 14px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px;">Horas</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: var(--space-6); border-radius: var(--radius-lg); min-width: 100px;">
+            <div style="font-size: 48px; font-weight: 700;">32</div>
+            <div style="font-size: 14px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px;">Minutos</div>
+          </div>
+        </div>
+        
+        <a href="#productos-oferta" class="btn btn-primary" style="background: white; color: var(--vibrant-red); font-size: 18px; animation: none; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+          Ver Ofertas Ahora
+        </a>
+      </div>
+      
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to top, white, transparent);"></div>
+    </section>
+    
+    <div class="container" style="padding: var(--space-16) var(--space-8);">
+      
+      <!-- Código Promocional -->
+      <section style="margin-bottom: var(--space-16);">
+        <div class="card" style="background: var(--gradient-accent); padding: var(--space-12); text-align: center; color: white; border: none;">
+          <h2 style="font-size: 36px; margin-bottom: var(--space-4); color: white;">Código de Descuento Especial</h2>
+          <p style="font-size: 18px; margin-bottom: var(--space-6); opacity: 0.95;">Usa este código en tu próxima compra</p>
+          
+          <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: var(--space-6) var(--space-12); border-radius: var(--radius-lg); border: 3px dashed white; margin-bottom: var(--space-6);">
+            <div style="font-size: 48px; font-weight: 700; letter-spacing: 4px; font-family: monospace;">YENYS30</div>
+          </div>
+          
+          <p style="font-size: 16px; opacity: 0.9;">Válido hasta el 30 de Noviembre de 2025</p>
+        </div>
+      </section>
+      
+      <!-- Productos en Oferta -->
+      <section id="productos-oferta" style="margin-bottom: var(--space-16);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8);">
+          <h2 style="font-size: 48px;">Productos en Oferta</h2>
+          <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--error-red); color: white; border-radius: var(--radius-md); font-weight: 700; animation: pulse-stock 2s infinite;">
+            <span style="font-size: 20px;">🔥</span>
+            Stock Limitado
+          </div>
+        </div>
+        
+        <div id="offers-grid" class="grid-4"></div>
+      </section>
+      
+      <!-- Categorías con Descuento -->
+      <section style="margin-bottom: var(--space-16);">
+        <h2 style="font-size: 48px; margin-bottom: var(--space-8);">Categorías en Oferta</h2>
+        
+        <div class="grid-4">
+          <div class="card" style="padding: var(--space-8); text-align: center; background: var(--gradient-button); color: white; cursor: pointer;">
+            <div style="font-size: 64px; margin-bottom: var(--space-4);">🧸</div>
+            <h3 style="color: white; margin-bottom: var(--space-2);">Peluches</h3>
+            <div style="font-size: 24px; font-weight: 700;">-25%</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8); text-align: center; background: var(--gradient-card); color: white; cursor: pointer;">
+            <div style="font-size: 64px; margin-bottom: var(--space-4);">🚗</div>
+            <h3 style="color: white; margin-bottom: var(--space-2);">Carros RC</h3>
+            <div style="font-size: 24px; font-weight: 700;">-30%</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8); text-align: center; background: var(--gradient-accent); color: white; cursor: pointer;">
+            <div style="font-size: 64px; margin-bottom: var(--space-4);">👧</div>
+            <h3 style="color: white; margin-bottom: var(--space-2);">Muñecas</h3>
+            <div style="font-size: 24px; font-weight: 700;">-20%</div>
+          </div>
+          
+          <div class="card" style="padding: var(--space-8); text-align: center; background: var(--gradient-hero); color: white; cursor: pointer;">
+            <div style="font-size: 64px; margin-bottom: var(--space-4);">📚</div>
+            <h3 style="color: white; margin-bottom: var(--space-2);">Educativos</h3>
+            <div style="font-size: 24px; font-weight: 700;">-15%</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Ofertas Flash -->
+      <section>
+        <h2 style="font-size: 48px; margin-bottom: var(--space-8);">Ofertas Flash</h2>
+        
+        <div style="background: var(--neutral-50); border: 3px dashed var(--vibrant-red); border-radius: var(--radius-xl); padding: var(--space-12); text-align: center; margin-bottom: var(--space-8);">
+          <div style="display: inline-flex; align-items: center; gap: var(--space-3); background: var(--vibrant-red); color: white; padding: var(--space-4) var(--space-8); border-radius: var(--radius-md); font-weight: 700; font-size: 18px; margin-bottom: var(--space-6);">
+            <span style="font-size: 24px;">⚡</span>
+            Termina en 2 horas
+          </div>
+          <h3 style="font-size: 36px; margin-bottom: var(--space-4);">Ofertas Relámpago</h3>
+          <p style="color: var(--neutral-600); font-size: 18px;">Aprovecha estos descuentos exclusivos antes de que se agoten</p>
+        </div>
+        
+        <div id="flash-offers" class="grid-4"></div>
+      </section>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Yenys</h4>
+          <p style="color: rgba(255,255,255,0.7);">Tu tienda de confianza para juguetes al por mayor</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.link/h1ku2w" target="_blank">WhatsApp: 943137626</a></li>
+            <li><a href="mailto:info@yenys.com">info@yenys.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Yenys. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Botón WhatsApp Flotante -->
+  <a href="https://wa.link/h1ku2w" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = getCurrentUser();
+      if (user) {
+        document.querySelector('.user-avatar').textContent = user.name.charAt(0).toUpperCase();
+        
+        // Actualizar nav si es empleado
+        if (user.role === 'empleado') {
+          document.querySelector('.logo').href = 'dashboard-empleado.html';
+          const navLinks = document.querySelector('.nav-links');
+          navLinks.innerHTML = `
+            <li><a href="dashboard-empleado.html">Dashboard</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="graficos.html">Gráficos</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+          `;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

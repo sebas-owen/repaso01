@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenys - Inicio de Sesión</title>
+    <meta name="description" content="Inicia sesión en Yenys - Tu tienda de juguetes al por mayor">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body style="margin: 0; min-height: 100vh; display: flex; background: var(--neutral-50);">
+
+<!-- Panel Izquierdo - Hero -->
+<div style="flex: 1; background: var(--gradient-hero); background-size: 200% 100%; animation: gradient-slide 6s ease-in-out infinite; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-12); color: var(--neutral-white); position: relative; overflow: hidden;">
+
+    <div style="max-width: 500px; text-align: center; z-index: 1;">
+        <h1 style="font-size: 64px; margin-bottom: var(--space-6); letter-spacing: -0.02em; animation: fadeIn 0.8s ease-out;">Yenys</h1>
+
+        <p style="font-size: 24px; margin-bottom: var(--space-8); opacity: 0.95; animation: fadeIn 1s ease-out 0.2s; animation-fill-mode: both;">Juguetes al Por Mayor</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-6); justify-content: center; margin-top: var(--space-12); animation: fadeIn 1.2s ease-out 0.4s; animation-fill-mode: both;">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔒</div>
+                <span style="font-weight: 600;">Compra Segura</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">🚚</div>
+                <span style="font-weight: 600;">Envío Rápido</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px;">💯</div>
+                <span style="font-weight: 600;">Mejor Precio</span>
+            </div>
+        </div>
+
+        <div style="margin-top: var(--space-12);">
+            <a href="https://wa.link/h1ku2w" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-6); background: #25D366; color: white; text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                <span style="font-size: 24px;">📱</span>
+                <span>WhatsApp: 943137626</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay decorativo -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, rgba(0,0,0,0.1), transparent); pointer-events: none;"></div>
+</div>
+
+<!-- Panel Derecho - Formularios -->
+<div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--space-8); min-width: 480px;">
+
+    <div style="width: 100%; max-width: 480px;">
+
+        <!-- Sección LOGIN -->
+        <div id="login-section" class="animate-fade-in">
+            <div style="text-align: center; margin-bottom: var(--space-8);">
+                <h2 style="color: var(--neutral-900); margin-bottom: var(--space-2); font-size: 32px;">Iniciar Sesión</h2>
+                <p style="color: var(--neutral-600); font-size: 16px;">Bienvenido de nuevo a Yenys</p>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email" class="form-label">Email</label>
+                    <input
+                            type="email"
+                            id="login-email"
+                            class="form-input"
+                            placeholder="tu@email.com"
+                            required
+                            autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password" class="form-label">Contraseña</label>
+                    <input
+                            type="password"
+                            id="login-password"
+                            class="form-input"
+                            placeholder="••••••••"
+                            required
+                            autocomplete="current-password"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-6);">
+                    Iniciar Sesión
+                </button>
+
+                <div style="text-align: center; margin-top: var(--space-6); color: var(--neutral-600);">
+                    ¿No tienes cuenta?
+                    <a href="#" onclick="event.preventDefault(); showRegisterForm();" style="color: var(--primary-700); font-weight: 600; text-decoration: none; transition: color 0.2s;">
+                        Regístrate aquí
+                    </a>
+                </div>
+            </form>
+
+            <!-- Credenciales de Prueba -->
+            <div style="margin-top: var(--space-8); padding: var(--space-6); background: var(--neutral-50); border-radius: var(--radius-lg); border: 1px solid var(--neutral-200);">
+                <h4 style="font-size: 14px; font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-900);">Cuentas de Prueba:</h4>
+                <div style="font-size: 13px; color: var(--neutral-600); line-height: 1.8;">
+                    <div style="margin-bottom: var(--space-2);">
+                        <strong style="color: var(--primary-700);">Cliente:</strong> cliente@yenys.com / 123456
+                    </div>
+                    <div>
+                        <strong style="color: var(--cta-orange-600);">Empleado:</strong> empleado@yenys.com / admin123
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección REGISTRO -->
+        <div id="register-section" class="hidden">
+            <div style="text-align: center; margin-bottom: var(--space-8);">
+                <h2 style="color: var(--neutral-900); margin-bottom: var(--space-2); font-size: 32px;">Crear Cuenta</h2>
+                <p style="color: var(--neutral-600); font-size: 16px;">Únete a la familia Yenys</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name" class="form-label">Nombre Completo</label>
+                    <input
+                            type="text"
+                            id="register-name"
+                            class="form-input"
+                            placeholder="Juan Pérez"
+                            required
+                            autocomplete="name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email" class="form-label">Email</label>
+                    <input
+                            type="email"
+                            id="register-email"
+                            class="form-input"
+                            placeholder="tu@email.com"
+                            required
+                            autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="register-password" class="form-label">Contraseña</label>
+                    <input
+                            type="password"
+                            id="register-password"
+                            class="form-input"
+                            placeholder="Mínimo 6 caracteres"
+                            required
+                            autocomplete="new-password"
+                            minlength="6"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="register-role" class="form-label">Tipo de Cuenta</label>
+                    <select id="register-role" class="form-select" required>
+                        <option value="cliente">Cliente (Comprador)</option>
+                        <option value="empleado">Empleado (Administrador)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-6);">
+                    Crear Cuenta
+                </button>
+
+                <div style="text-align: center; margin-top: var(--space-6); color: var(--neutral-600);">
+                    ¿Ya tienes cuenta?
+                    <a href="#" onclick="event.preventDefault(); showLoginForm();" style="color: var(--primary-700); font-weight: 600; text-decoration: none; transition: color 0.2s;">
+                        Inicia sesión
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Scripts de la aplicación -->
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
